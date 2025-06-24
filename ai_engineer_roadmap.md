@@ -180,13 +180,3 @@ Each week and project should include:
 - Full-stack AI SaaS App (LLM API + UI + logging)
 
 ---
-
-## 🧭 Format Options
-
-This roadmap is now packaged as a GitHub repo structure. You can:
-
-- ✅ Create folders per week and project as outlined above
-- ✅ Add Markdown files for each topic or week inside the `weeks/` folder
-- ✅ Track your progress using checklists in each file
-- ✅ Share or collaborate on your roadmap with others
-
