@@ -72,9 +72,23 @@ chain = LLMChain(llm=llm, prompt=prompt)
 ```
 
 ## Resources
-- [LangChain Documentation](https://docs.langchain.com/)
-- [LangChain GitHub Repository](https://github.com/hwchase17/langchain)
-- LangChain YouTube tutorials
+
+### Python LangChain
+- [LangChain Python Documentation](https://docs.langchain.com/)
+- [LangChain Python GitHub](https://github.com/langchain-ai/langchain)
+- [LangChain Python Examples](https://github.com/langchain-ai/langchain/tree/master/docs/docs/modules)
+
+### JavaScript/TypeScript LangChain
+- [LangChain.js Documentation](https://js.langchain.com/docs/)
+- [LangChain.js GitHub Repository](https://github.com/langchain-ai/langchainjs)
+- [LangChain.js Quickstart](https://js.langchain.com/docs/get_started/quickstart)
+- [LangChain.js Examples](https://github.com/langchain-ai/langchainjs/tree/main/examples)
+- [Vercel AI SDK + LangChain.js](https://sdk.vercel.ai/docs/guides/frameworks/langchain)
+
+### Tutorials & Learning
+- [LangChain YouTube Channel](https://www.youtube.com/@LangChain)
+- [LangChain.js Tutorial Series](https://js.langchain.com/docs/tutorials/)
+- [Building AI Apps with LangChain.js](https://vercel.com/guides/langchain-ai-chatbot)
 - Community examples and templates
 
 ## Next Week Preview
