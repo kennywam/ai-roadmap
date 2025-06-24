@@ -2,7 +2,9 @@
 
 A comprehensive, hands-on learning path for software engineers who want to master modern AI development. This roadmap covers everything from LLM fundamentals to production deployment, with practical projects that reinforce key concepts.
 
-> **Goal**: Transform from AI beginner to proficient AI engineer in 7 weeks through structured learning and hands-on projects.
+**🚀 Dual-Language Support**: Learn AI development in both **Python** and **JavaScript/TypeScript** with framework-specific resources, examples, and deployment strategies.
+
+> **Goal**: Transform from AI beginner to proficient AI engineer in 7 weeks through structured learning and hands-on projects, using your preferred programming language and tech stack.
 
 ---
 
@@ -53,21 +55,25 @@ Each project builds on previous weeks' knowledge and can be added to your portfo
 
 ## 🛠 Technology Stack
 
-### Core AI Frameworks
-- **LangChain**: Application framework for LLMs
-- **Hugging Face**: Model hub and transformers library
-- **OpenAI API**: GPT models and embeddings
+### 🐍 Python AI Ecosystem
+- **Frameworks**: LangChain, Hugging Face Transformers, FastAPI
+- **ML Libraries**: PyTorch, TensorFlow, scikit-learn
+- **Vector DBs**: Chroma, FAISS, Weaviate Python clients
+- **OCR**: Tesseract, EasyOCR, PaddleOCR
+- **Deployment**: Docker, Kubernetes, FastAPI, Streamlit
 
-### Specialized Tools
-- **Vector Databases**: Chroma, Pinecone, Weaviate, FAISS
-- **OCR Libraries**: Tesseract, EasyOCR, PaddleOCR
-- **Agent Frameworks**: LangGraph, CrewAI, AutoGPT
+### 🟨 JavaScript/TypeScript AI Ecosystem
+- **Frameworks**: LangChain.js, Vercel AI SDK, TensorFlow.js
+- **Full-Stack**: Next.js, NestJS, Node.js, Express
+- **Vector DBs**: Pinecone TS SDK, Weaviate JS client, ChromaDB JS
+- **OCR**: Tesseract.js, Cloud OCR APIs (Google Vision, AWS)
+- **Deployment**: Vercel, Railway, Render, Cloudflare Workers
 
-### Development & Deployment
-- **Languages**: Python (primary), JavaScript/TypeScript
-- **UI Frameworks**: Streamlit, Gradio, React/Next.js
-- **Cloud Platforms**: AWS, Google Cloud, Azure
-- **Monitoring**: Weights & Biases, MLflow, LangSmith
+### 🌐 Universal Tools & Services
+- **LLM APIs**: OpenAI, Anthropic, Google PaLM, Cohere
+- **Vector Databases**: Pinecone, Weaviate, Chroma, FAISS
+- **Cloud Platforms**: AWS, Google Cloud, Azure, Vercel
+- **Monitoring**: Weights & Biases, MLflow, LangSmith, Sentry
 
 ---
 
@@ -91,6 +97,33 @@ ai-roadmap/
 │   └── fullstack-saas-app/
 └── resources.md             # Additional learning resources
 ```
+
+---
+
+## 🔄 Dual-Language Learning Approach
+
+This roadmap uniquely supports both **Python** and **JavaScript/TypeScript** developers:
+
+### 🏗️ **Unified Curriculum**
+- Same AI concepts and techniques across both languages
+- Week-by-week progression regardless of your tech stack choice
+- Consistent project outcomes using different implementation approaches
+
+### 📚 **Language-Specific Resources**
+Each week includes:
+- **Python Resources**: Traditional ML stack (LangChain, Hugging Face, FastAPI)
+- **JavaScript/TypeScript Resources**: Modern web stack (LangChain.js, Vercel AI SDK, Next.js)
+- **Universal Concepts**: API usage, deployment strategies, best practices
+
+### 🎯 **Flexible Learning Paths**
+- **Single Language**: Focus on your preferred language throughout
+- **Polyglot Approach**: Learn concepts in both languages for maximum versatility
+- **Team Learning**: Different team members can follow different tracks while building the same projects
+
+### 🚀 **Real-World Alignment**
+- **Python Track**: Ideal for ML engineers, data scientists, AI researchers
+- **JavaScript/TypeScript Track**: Perfect for full-stack developers, frontend engineers, startup builders
+- **Both Tracks**: Essential for AI engineering leads and architecture roles
 
 ---
 
@@ -119,8 +152,23 @@ ai-roadmap/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
+**Choose Your Learning Path:**
+
+**🐍 Python Track:**
 - Basic Python programming knowledge
-- Familiarity with APIs and web development
+- Familiarity with pip and virtual environments
+- Understanding of REST APIs
+
+**🟨 JavaScript/TypeScript Track:**
+- JavaScript/TypeScript fundamentals
+- Node.js and npm experience
+- Understanding of async/await and promises
+
+**🌐 Universal:**
+- Familiarity with web development concepts
+- Basic understanding of APIs and HTTP
+- Git version control knowledge
 - Understanding of machine learning concepts (helpful but not required)
 
 ### Setup Instructions
