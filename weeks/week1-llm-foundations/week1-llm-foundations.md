@@ -50,10 +50,26 @@
    - Create a prompt template library
 
 ## Resources
+
+### Core Papers & Theory
 - [Attention Is All You Need](https://arxiv.org/abs/1706.03762) - Original Transformer paper
 - [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
-- OpenAI API Documentation
-- Hugging Face Transformers Documentation
+
+### API Documentation
+- [OpenAI API Documentation](https://platform.openai.com/docs)
+- [OpenAI Node.js SDK](https://github.com/openai/openai-node) - Official JavaScript/TypeScript SDK
+- [Anthropic TypeScript SDK](https://github.com/anthropics/anthropic-sdk-typescript)
+
+### Python Resources
+- [Hugging Face Transformers Documentation](https://huggingface.co/docs/transformers)
+- [LangChain Python Documentation](https://docs.langchain.com/)
+
+### JavaScript/TypeScript Resources
+- [OpenAI Node.js Quickstart](https://platform.openai.com/docs/quickstart/node-js)
+- [TensorFlow.js Guide](https://www.tensorflow.org/js/guide) - ML in JavaScript
+- [Vercel AI SDK](https://sdk.vercel.ai/docs) - AI app development toolkit
+- [AI.js](https://github.com/ntedgi/ai.js) - Lightweight AI utilities for Node.js
+- [OpenAI TypeScript Examples](https://github.com/openai/openai-node/tree/master/examples)
 
 ## Next Week Preview
 Week 2 will focus on LangChain, a framework for building applications with LLMs.
