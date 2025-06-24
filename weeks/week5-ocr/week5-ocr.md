@@ -119,12 +119,36 @@ def google_vision_ocr(image_path):
 ```
 
 ## Resources
+
+### OCR Libraries (Python)
 - [Tesseract Documentation](https://tesseract-ocr.github.io/)
 - [EasyOCR GitHub](https://github.com/JaidedAI/EasyOCR)
 - [PaddleOCR Documentation](https://github.com/PaddlePaddle/PaddleOCR)
+- [PyTesseract Documentation](https://pypi.org/project/pytesseract/)
+
+### JavaScript/TypeScript OCR
+- [Tesseract.js](https://github.com/naptha/tesseract.js) - OCR for JavaScript/Node.js
+- [OCR-Space API](https://ocr.space/ocrapi) - Cloud OCR with JavaScript SDK
+- [Google Cloud Vision Node.js](https://cloud.google.com/vision/docs/libraries#client-libraries-install-nodejs)
+- [Azure Computer Vision SDK](https://docs.microsoft.com/en-us/javascript/api/@azure/cognitiveservices-computervision/)
+- [AWS Textract JavaScript SDK](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Textract.html)
+
+### Image Processing (JavaScript/TypeScript)
+- [Jimp](https://github.com/oliver-moran/jimp) - Image processing library for Node.js
+- [Sharp](https://github.com/lovell/sharp) - High-performance image processing
+- [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) - Browser image manipulation
+- [Fabric.js](http://fabricjs.com/) - Canvas library for interactive graphics
+
+### Cloud OCR APIs
 - [Google Cloud Vision API](https://cloud.google.com/vision/docs/ocr)
+- [AWS Textract](https://aws.amazon.com/textract/)
+- [Azure Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/)
+- [Microsoft Form Recognizer](https://azure.microsoft.com/en-us/services/form-recognizer/)
+
+### Additional Resources
 - [OpenCV Image Processing Tutorials](https://docs.opencv.org/master/d9/df8/tutorial_root.html)
 - Academic papers on document analysis and recognition
+- [Document AI Datasets](https://paperswithcode.com/datasets?task=optical-character-recognition)
 
 ## Next Week Preview
 Week 6 will focus on AI Agents and autonomous systems that can perform complex tasks.

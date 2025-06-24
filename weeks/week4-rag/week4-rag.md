@@ -94,13 +94,32 @@ result = qa_chain({"query": "What is the main topic of the document?"})
 ```
 
 ## Resources
+
+### Core Papers
 - [RAG Paper](https://arxiv.org/abs/2005.11401) - Original RAG research
 - [LangChain RAG Concepts](https://python.langchain.com/docs/concepts/rag/)
 - [LangChain RAG Guide Part 1](https://python.langchain.com/docs/tutorials/rag/)
 - [LangChain RAG Guide Part 2](https://python.langchain.com/docs/tutorials/qa_chat_history/)
-- Vector database documentation (Pinecone, Weaviate, etc.)
-- [Sentence Transformers](https://www.sbert.net/) documentation
+
+### Python Resources
+- [Sentence Transformers Documentation](https://www.sbert.net/)
+- [Haystack Documentation](https://github.com/deepset-ai/haystack)
+
+### JavaScript/TypeScript Resources
+- [LangChain.js RAG Guide](https://js.langchain.com/docs/use-cases/retrieval-augmented-generation)
+- [Pinecone TypeScript SDK](https://github.com/pinecone-io/pinecone-ts-client)
+- [Weaviate JavaScript Client](https://weaviate.io/developers/weaviate/current/client-libraries/javascript)
+- [ChromaDB JavaScript SDK](https://js.chromadb.com/)
+
+### Vector Database Documentation
+- [Pinecone Documentation](https://docs.pinecone.io/docs/overview)
+- [Weaviate Documentation](https://weaviate.io/docs/)
+- [Chroma Documentation](https://docs.trychroma.com/)
+
+### Evaluation Frameworks and Benchmarks
 - RAG evaluation frameworks and benchmarks
+- [BEIR Benchmark](https://github.com/UKPLab/beir)
+- [Dense Passage Retrieval (DPR)](https://github.com/facebookresearch/DPR)
 
 ## Next Week Preview
 Week 5 will focus on Optical Character Recognition (OCR) and document processing.

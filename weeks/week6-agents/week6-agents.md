@@ -125,12 +125,37 @@ class ResearchAgent:
 ```
 
 ## Resources
+
+### Python Agent Frameworks
 - [LangChain Agents Documentation](https://python.langchain.com/api_reference/core/agents.html)
-- [AutoGPT GitHub Repository](https://github.com/Significant-Gravitas/AutoGPT)
-- [CrewAI Documentation](https://docs.crewai.com/)
 - [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
+- [CrewAI Documentation](https://docs.crewai.com/)
+- [AutoGPT GitHub Repository](https://github.com/Significant-Gravitas/AutoGPT)
+
+### JavaScript/TypeScript Agent Frameworks
+- [LangChain.js Agents](https://js.langchain.com/docs/modules/agents/) - Agents in JavaScript/TypeScript
+- [LangGraph.js](https://github.com/langchain-ai/langgraphjs) - State-based workflows in JS
+- [Vercel AI SDK - Tools](https://sdk.vercel.ai/docs/ai-core/tools) - Tool calling with AI models
+- [OpenAI Function Calling](https://platform.openai.com/docs/guides/function-calling) - JavaScript examples
+- [Anthropic Tool Use](https://docs.anthropic.com/claude/docs/tool-use) - TypeScript SDK examples
+
+### Agent Development Tools (JavaScript/TypeScript)
+- [AI SDK Core](https://sdk.vercel.ai/docs/ai-core/overview) - Building AI applications
+- [Instructor.js](https://github.com/instructor-ai/instructor-js) - Structured outputs from LLMs
+- [Zod](https://github.com/colinhacks/zod) - TypeScript schema validation for tools
+- [Node.js Worker Threads](https://nodejs.org/api/worker_threads.html) - Parallel processing
+
+### Web Automation & Tools (JavaScript/TypeScript)
+- [Puppeteer](https://github.com/puppeteer/puppeteer) - Browser automation
+- [Playwright](https://github.com/microsoft/playwright) - Cross-browser automation
+- [Cheerio](https://github.com/cheeriojs/cheerio) - Server-side DOM manipulation
+- [Axios](https://github.com/axios/axios) - HTTP client for API calls
+
+### Research & Academic Resources
 - Multi-agent systems research papers
 - Agent-based modeling frameworks
+- [OpenAI Swarm Framework](https://github.com/openai/swarm) - Multi-agent orchestration
+- [Microsoft Semantic Kernel](https://github.com/microsoft/semantic-kernel) - AI orchestration
 
 ## Next Week Preview
 Week 7 will cover Advanced LLMOps - production deployment, monitoring, and scaling of LLM applications.

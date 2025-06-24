@@ -178,13 +178,63 @@ class CostTracker:
 ```
 
 ## Resources
+
+### General MLOps & Best Practices
 - [MLOps Best Practices](https://ml-ops.org/)
-- [Kubernetes Documentation](https://kubernetes.io/docs/)
-- [Prometheus Monitoring](https://prometheus.io/docs/)
-- [FastAPI Production Deployment](https://fastapi.tiangolo.com/deployment/)
 - [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/)
 - [Docker Best Practices](https://docs.docker.com/develop/dev-best-practices/)
-- LLMOps platforms (Weights & Biases, MLflow, etc.)
+- [Kubernetes Documentation](https://kubernetes.io/docs/)
+
+### Python Deployment Resources
+- [FastAPI Production Deployment](https://fastapi.tiangolo.com/deployment/)
+- [Prometheus Monitoring](https://prometheus.io/docs/)
+- [Gunicorn Documentation](https://gunicorn.org/)
+- [Uvicorn Deployment](https://www.uvicorn.org/deployment/)
+
+### JavaScript/TypeScript Deployment
+- [Next.js Deployment](https://nextjs.org/docs/deployment) - Production deployment guide
+- [Vercel Platform](https://vercel.com/docs) - Serverless deployment for JS/TS
+- [Railway Deployment](https://docs.railway.app/) - Full-stack deployment
+- [Render Documentation](https://render.com/docs) - Cloud platform deployment
+- [Fly.io Deployment](https://fly.io/docs/) - Global app deployment
+
+### Node.js Production & Monitoring
+- [Node.js Production Best Practices](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/)
+- [PM2 Process Manager](https://pm2.keymetrics.io/) - Node.js production process manager
+- [Express.js Production](https://expressjs.com/en/advanced/best-practice-performance.html)
+- [NestJS Production](https://docs.nestjs.com/techniques/performance) - Enterprise deployment
+
+### JavaScript/TypeScript Monitoring & Observability
+- [Sentry JavaScript](https://docs.sentry.io/platforms/javascript/) - Error tracking
+- [DataDog RUM](https://docs.datadoghq.com/real_user_monitoring/browser/) - Real user monitoring
+- [New Relic Browser](https://docs.newrelic.com/docs/browser/) - Performance monitoring
+- [LogRocket](https://docs.logrocket.com/) - Session replay and monitoring
+- [Grafana](https://grafana.com/docs/) - Visualization and dashboards
+
+### Cloud Platforms (JavaScript/TypeScript)
+- [Vercel AI SDK Deployment](https://sdk.vercel.ai/docs/guides/frameworks/nextjs) - AI app deployment
+- [Cloudflare Workers](https://developers.cloudflare.com/workers/) - Edge computing
+- [AWS Lambda Node.js](https://docs.aws.amazon.com/lambda/latest/dg/lambda-nodejs.html)
+- [Google Cloud Functions](https://cloud.google.com/functions/docs/writing)
+- [Azure Functions JavaScript](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node)
+
+### Database & Storage (TypeScript)
+- [Supabase Deployment](https://supabase.com/docs/guides/hosting/overview) - PostgreSQL hosting
+- [PlanetScale Deployment](https://planetscale.com/docs/tutorials/deploy-to-vercel) - MySQL serverless
+- [MongoDB Atlas](https://docs.atlas.mongodb.com/) - MongoDB cloud hosting
+- [Redis Cloud](https://docs.redis.com/latest/rc/) - Managed Redis
+
+### CI/CD for JavaScript/TypeScript
+- [GitHub Actions](https://docs.github.com/en/actions) - CI/CD workflows
+- [Vercel Git Integration](https://vercel.com/docs/concepts/git) - Automatic deployments
+- [Railway CI/CD](https://docs.railway.app/deploy/builds) - Build and deploy
+- [GitLab CI/CD](https://docs.gitlab.com/ee/ci/) - DevOps platform
+
+### MLOps Platforms
+- [Weights & Biases](https://docs.wandb.ai/) - Experiment tracking
+- [MLflow](https://mlflow.org/docs/latest/index.html) - ML lifecycle management
+- [LangSmith](https://docs.langchain.com/langsmith) - LLM application monitoring
+- [Helicone](https://docs.helicone.ai/) - LLM observability platform
 
 ## Course Completion
 Congratulations! You've completed the 7-week AI Learning Roadmap. You now have:
