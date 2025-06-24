@@ -95,7 +95,9 @@ result = qa_chain({"query": "What is the main topic of the document?"})
 
 ## Resources
 - [RAG Paper](https://arxiv.org/abs/2005.11401) - Original RAG research
-- [LangChain RAG Guide](https://docs.langchain.com/docs/use-cases/question-answering)
+- [LangChain RAG Concepts](https://python.langchain.com/docs/concepts/rag/)
+- [LangChain RAG Guide Part 1](https://python.langchain.com/docs/tutorials/rag/)
+- [LangChain RAG Guide Part 2](https://python.langchain.com/docs/tutorials/qa_chat_history/)
 - Vector database documentation (Pinecone, Weaviate, etc.)
 - [Sentence Transformers](https://www.sbert.net/) documentation
 - RAG evaluation frameworks and benchmarks
