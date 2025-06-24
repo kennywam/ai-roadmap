@@ -125,7 +125,7 @@ class ResearchAgent:
 ```
 
 ## Resources
-- [LangChain Agents Documentation](https://docs.langchain.com/docs/components/agents/)
+- [LangChain Agents Documentation](https://python.langchain.com/api_reference/core/agents.html)
 - [AutoGPT GitHub Repository](https://github.com/Significant-Gravitas/AutoGPT)
 - [CrewAI Documentation](https://docs.crewai.com/)
 - [LangGraph Documentation](https://langchain-ai.github.io/langgraph/)
