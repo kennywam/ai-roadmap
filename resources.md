@@ -15,6 +15,13 @@ This document contains additional learning resources, tools, and references to s
 - **"Natural Language Processing with Python"** by Steven Bird, Ewan Klein, Edward Loper
 - **"Transformers for Natural Language Processing"** by Denis Rothman
 
+### JavaScript/TypeScript & Full-Stack AI
+- **"Learning TypeScript"** by Josh Goldberg
+- **"Effective TypeScript"** by Dan Vanderkam
+- **"Full Stack React, TypeScript, and Node"** by David Choi
+- **"Node.js Design Patterns"** by Mario Casciaro and Luciano Mammino
+- **"Next.js in Action"** by Misko Hevery
+
 ### AI Ethics and Governance
 - **"Weapons of Math Destruction"** by Cathy O'Neil
 - **"Race After Technology"** by Ruha Benjamin
@@ -34,6 +41,15 @@ This document contains additional learning resources, tools, and references to s
 - **Natural Language Processing Specialization** - Coursera
 - **Machine Learning Engineering for Production** - Coursera
 - **Advanced Machine Learning** - Coursera
+
+### TypeScript/JavaScript AI Courses
+- **TypeScript for JavaScript Developers** - Microsoft Learn
+- **Next.js Full-Stack Development** - Various platforms
+- **NestJS Fundamentals** - NestJS official courses
+- **Building AI Apps with Vercel AI SDK** - Vercel Learn
+- **LangChain.js for Developers** - Community tutorials
+- **Full-Stack TypeScript** - Frontend Masters
+- **Node.js Best Practices** - Various platforms
 
 ## Research Papers (Essential Reads)
 
@@ -58,12 +74,59 @@ This document contains additional learning resources, tools, and references to s
 - **NumPy** - Numerical computing
 - **Pandas** - Data manipulation
 
-### LLM and NLP Libraries
+### LLM and NLP Libraries (Python)
 - **Transformers** (Hugging Face) - Pre-trained models
 - **LangChain** - LLM application framework
 - **spaCy** - Industrial-strength NLP
 - **NLTK** - Natural language toolkit
 - **Gensim** - Topic modeling
+
+### JavaScript/TypeScript AI Libraries
+- **LangChain.js** - JavaScript/TypeScript port of LangChain
+- **TensorFlow.js** - Machine learning in JavaScript
+- **OpenAI Node.js SDK** - Official OpenAI JavaScript SDK
+- **Anthropic TypeScript SDK** - Claude API for TypeScript
+- **Hugging Face.js** - JavaScript client for Hugging Face
+- **Vector.js** - Vector database operations
+- **AI.js** - Lightweight AI utilities for Node.js
+- **Replicate.js** - JavaScript client for Replicate AI models
+
+### Full-Stack TypeScript/JavaScript Frameworks
+
+#### Frontend Frameworks
+- **Next.js** - React framework with SSR/SSG
+- **Nuxt.js** - Vue.js framework with SSR/SSG
+- **SvelteKit** - Svelte framework for full-stack apps
+- **Remix** - Full-stack React framework
+- **Astro** - Static site generator with component islands
+- **Vite** - Fast build tool and dev server
+
+#### Backend Frameworks (Node.js)
+- **NestJS** - Enterprise Node.js framework with TypeScript
+- **Express.js** - Minimal web framework
+- **Fastify** - Fast and low overhead web framework
+- **Koa.js** - Next generation web framework
+- **tRPC** - End-to-end typesafe APIs
+- **GraphQL** (Apollo Server, TypeGraphQL)
+
+#### Database & ORM (TypeScript)
+- **Prisma** - Type-safe database toolkit
+- **TypeORM** - TypeScript ORM for multiple databases
+- **Drizzle** - TypeScript ORM with SQL-like syntax
+- **Mongoose** - MongoDB object modeling
+- **Supabase** - Firebase alternative with TypeScript SDK
+- **PlanetScale** - MySQL-compatible serverless database
+
+#### AI-Specific JavaScript/TypeScript Tools
+- **Vercel AI SDK** - AI application development toolkit
+- **LangChain.js** - JavaScript/TypeScript version of LangChain
+- **Pinecone TypeScript SDK** - Vector database client
+- **Weaviate TypeScript SDK** - Vector database client
+- **ChromaDB JavaScript SDK** - Embedding database client
+- **OpenAI Node.js SDK** - Official OpenAI JavaScript SDK
+- **Anthropic TypeScript SDK** - Claude API client
+- **Replicate.js** - AI model deployment platform
+- **Together.ai TypeScript SDK** - Open-source AI models
 
 ### Vector Databases
 - **Pinecone** - Managed vector database
@@ -111,6 +174,18 @@ This document contains additional learning resources, tools, and references to s
 - **Azure Machine Learning** - Microsoft's ML platform
 - **Hugging Face Inference API** - Hosted model inference
 
+### TypeScript/JavaScript Deployment Platforms
+- **Vercel** - Next.js hosting with AI SDK integration
+- **Netlify** - JAMstack deployment with edge functions
+- **Railway** - Full-stack deployment with databases
+- **Render** - Cloud platform for web services
+- **Fly.io** - Global application deployment
+- **PlanetScale** - Serverless MySQL platform
+- **Supabase** - Firebase alternative with real-time features
+- **Cloudflare Workers** - Edge computing platform
+- **AWS Lambda** - Serverless functions
+- **Google Cloud Functions** - Event-driven serverless compute
+
 ## Communities and Forums
 
 ### Discussion Forums
@@ -124,6 +199,17 @@ This document contains additional learning resources, tools, and references to s
 - **LinkedIn AI Groups** - Professional networking
 - **Discord AI Communities** - Real-time chat
 - **Slack Workspaces** - AI/ML communities
+
+### TypeScript/JavaScript Communities
+- **r/typescript** - TypeScript Reddit community
+- **r/nextjs** - Next.js Reddit community
+- **r/node** - Node.js Reddit community
+- **TypeScript Discord** - Official TypeScript community
+- **Reactiflux Discord** - React community
+- **Next.js Discord** - Next.js community
+- **NestJS Discord** - NestJS community
+- **Vercel Community** - Vercel platform discussions
+- **T3 Stack Community** - Modern full-stack TypeScript
 
 ## Conferences and Events
 
@@ -168,13 +254,35 @@ This document contains additional learning resources, tools, and references to s
 - **AI Engineering** - Production AI systems
 - **DeepLearningAI** - Andrew Ng's courses
 
+### TypeScript/JavaScript & Full-Stack
+- **Theo - t3.gg** - Modern full-stack TypeScript development
+- **WebDevSimplified** - JavaScript/TypeScript tutorials
+- **Fireship** - Modern web development and frameworks
+- **Lee Robinson (Vercel)** - Next.js and modern React
+- **Jack Herrington** - Advanced TypeScript and React patterns
+- **Ben Awad** - Full-stack development tutorials
+- **Traversy Media** - Web development fundamentals
+- **The Net Ninja** - JavaScript and framework tutorials
+- **Academind** - Full-stack development courses
+
 ## Newsletters
 
+### AI & Machine Learning
 - **The Batch** - DeepLearning.AI newsletter
 - **AI Research** - Latest research summaries
 - **The Algorithm** - MIT Technology Review
 - **Import AI** - Jack Clark's AI newsletter
 - **The Gradient** - Weekly AI research
+
+### TypeScript/JavaScript & Full-Stack
+- **JavaScript Weekly** - Latest JS news and articles
+- **TypeScript Weekly** - TypeScript-focused newsletter
+- **React Newsletter** - React ecosystem updates
+- **Node Weekly** - Node.js news and tutorials
+- **Frontend Focus** - Frontend development newsletter
+- **Bytes** - JavaScript newsletter with humor
+- **This Week in React** - React ecosystem roundup
+- **Next.js Newsletter** - Official Next.js updates
 
 ## Practice Platforms
 
