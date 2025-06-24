@@ -1,6 +1,7 @@
 # Week 7: Advanced LLMOps
 
 ## Learning Objectives
+
 - Understand production deployment strategies for LLM applications
 - Learn monitoring, logging, and observability for AI systems
 - Implement cost optimization and performance tuning
@@ -9,6 +10,7 @@
 ## Topics Covered
 
 ### 1. Production Deployment Strategies
+
 - Container orchestration (Docker, Kubernetes)
 - Serverless deployment (AWS Lambda, Vercel, etc.)
 - API gateway and load balancing
@@ -16,6 +18,7 @@
 - Infrastructure as Code (Terraform, CloudFormation)
 
 ### 2. Model Serving and Optimization
+
 - Model compression and quantization
 - Caching strategies (Redis, Memcached)
 - Batch processing and queue management
@@ -23,6 +26,7 @@
 - Edge deployment considerations
 
 ### 3. Monitoring and Observability
+
 - Application performance monitoring (APM)
 - LLM-specific metrics (latency, token usage, quality)
 - Log aggregation and analysis
@@ -30,6 +34,7 @@
 - Dashboard creation and visualization
 
 ### 4. Cost Management
+
 - Token usage tracking and optimization
 - Model selection based on cost-performance
 - Caching to reduce API calls
@@ -37,6 +42,7 @@
 - Cost allocation and chargeback
 
 ### 5. Security and Governance
+
 - API security and authentication
 - Data privacy and compliance (GDPR, HIPAA)
 - Prompt injection prevention
@@ -44,6 +50,7 @@
 - Audit logging and compliance reporting
 
 ### 6. Testing and Quality Assurance
+
 - Unit testing for LLM applications
 - Integration testing with external APIs
 - Load testing and performance benchmarking
@@ -51,6 +58,7 @@
 - Regression testing for model updates
 
 ### 7. MLOps Pipeline Integration
+
 - CI/CD for LLM applications
 - Model versioning and registry
 - Automated testing and validation
@@ -60,12 +68,14 @@
 ## Exercises
 
 1. **Production Deployment Setup**
+
    - Containerize an LLM application
    - Deploy to cloud platform (AWS/GCP/Azure)
    - Set up monitoring and logging
    - Configure auto-scaling
 
 2. **Monitoring Dashboard**
+
    - Create comprehensive monitoring setup
    - Track key performance indicators
    - Set up alerting for anomalies
@@ -80,6 +90,7 @@
 ## Code Examples
 
 ### JavaScript/TypeScript Implementation
+
 ```typescript
 // Docker configuration
 // Dockerfile
@@ -96,6 +107,7 @@ CMD ["node", "app.js"]
 ```
 
 ### Express.js Application with Monitoring
+
 ```typescript
 import express from 'express';
 import { counter, histogram } from 'prom-client';
@@ -183,9 +195,15 @@ spec:
 ```
 
 ### Cost Tracking Example
+
 ```typescript
 class CostTracker {
-  private usageLog: Array<{ timestamp: number; model: string; tokens: number; cost: number }> = [];
+  private usageLog: Array<{
+    timestamp: number
+    model: string
+    tokens: number
+    cost: number
+  }> = []
 
   trackUsage(model: string, tokensUsed: number, cost: number) {
     this.usageLog.push({
@@ -193,40 +211,150 @@ class CostTracker {
       model,
       tokens: tokensUsed,
       cost,
-    });
+    })
   }
 
   getDailyCost(date: Date): number {
     // Calculate daily costs
-    return this.usageLog.filter(log => {
-      const logDate = new Date(log.timestamp);
-      return logDate.setHours(0, 0, 0, 0) === date.setHours(0, 0, 0, 0);
-    }).reduce((acc, log) => acc + log.cost, 0);
+    return this.usageLog
+      .filter((log) => {
+        const logDate = new Date(log.timestamp)
+        return logDate.setHours(0, 0, 0, 0) === date.setHours(0, 0, 0, 0)
+      })
+      .reduce((acc, log) => acc + log.cost, 0)
   }
 
   optimizeModelSelection(taskType: string): string {
     // Select the most cost-effective model for a given task
-    return 'model-A'; // Dummy implementation
+    return 'model-A' // Dummy implementation
   }
 }
 ```
+
+### Python Implementation
+
+```dockerfile
+# Docker configuration
+# Dockerfile
+FROM python:3.9-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY . .
+EXPOSE 8000
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+
+```python
+# FastAPI application with monitoring
+from fastapi import FastAPI, HTTPException
+from prometheus_fastapi_instrumentator import Instrumentator
+import logging
+import time
+
+app = FastAPI()
+
+# Prometheus metrics
+Instrumentator().instrument(app).expose(app)
+
+# Logging configuration
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+@app.middleware("http")
+async def log_requests(request, call_next):
+    start_time = time.time()
+    response = await call_next(request)
+    process_time = time.time() - start_time
+
+    logger.info(f"Path: {request.url.path}, "
+                f"Method: {request.method}, "
+                f"Status: {response.status_code}, "
+                f"Duration: {process_time:.4f}s")
+
+    return response
+```
+
+```yaml
+# Kubernetes deployment YAML
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: llm-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: llm-app
+  template:
+    metadata:
+      labels:
+        app: llm-app
+    spec:
+      containers:
+        - name: llm-app
+          image: your-registry/llm-app:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: api-secrets
+                  key: openai-api-key
+          resources:
+            requests:
+              memory: '512Mi'
+              cpu: '250m'
+            limits:
+              memory: '1Gi'
+              cpu: '500m'
+```
+
+```python
+# Cost tracking example
+class CostTracker:
+    def __init__(self):
+        self.usage_log = []
+
+    def track_usage(self, model, tokens_used, cost):
+        self.usage_log.append({
+            'timestamp': time.time(),
+            'model': model,
+            'tokens': tokens_used,
+            'cost': cost
+        })
+
+    def get_daily_cost(self, date):
+        # Calculate daily costs
+        pass
+
+    def optimize_model_selection(self, task_type):
+        # Select most cost-effective model
+        pass
 ```
 
 ## Resources
 
 ### General MLOps & Best Practices
+
 - [MLOps Best Practices](https://ml-ops.org/)
 - [AWS Well-Architected Framework](https://aws.amazon.com/architecture/well-architected/)
 - [Docker Best Practices](https://docs.docker.com/develop/dev-best-practices/)
 - [Kubernetes Documentation](https://kubernetes.io/docs/)
 
 ### Python Deployment Resources
+
 - [FastAPI Production Deployment](https://fastapi.tiangolo.com/deployment/)
 - [Prometheus Monitoring](https://prometheus.io/docs/)
 - [Gunicorn Documentation](https://gunicorn.org/)
 - [Uvicorn Deployment](https://www.uvicorn.org/deployment/)
 
 ### JavaScript/TypeScript Deployment
+
 - [Next.js Deployment](https://nextjs.org/docs/deployment) - Production deployment guide
 - [Vercel Platform](https://vercel.com/docs) - Serverless deployment for JS/TS
 - [Railway Deployment](https://docs.railway.app/) - Full-stack deployment
@@ -234,12 +362,14 @@ class CostTracker {
 - [Fly.io Deployment](https://fly.io/docs/) - Global app deployment
 
 ### Node.js Production & Monitoring
+
 - [Node.js Production Best Practices](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/)
 - [PM2 Process Manager](https://pm2.keymetrics.io/) - Node.js production process manager
 - [Express.js Production](https://expressjs.com/en/advanced/best-practice-performance.html)
 - [NestJS Production](https://docs.nestjs.com/techniques/performance) - Enterprise deployment
 
 ### JavaScript/TypeScript Monitoring & Observability
+
 - [Sentry JavaScript](https://docs.sentry.io/platforms/javascript/) - Error tracking
 - [DataDog RUM](https://docs.datadoghq.com/real_user_monitoring/browser/) - Real user monitoring
 - [New Relic Browser](https://docs.newrelic.com/docs/browser/) - Performance monitoring
@@ -247,6 +377,7 @@ class CostTracker {
 - [Grafana](https://grafana.com/docs/) - Visualization and dashboards
 
 ### Cloud Platforms (JavaScript/TypeScript)
+
 - [Vercel AI SDK Deployment](https://sdk.vercel.ai/docs/guides/frameworks/nextjs) - AI app deployment
 - [Cloudflare Workers](https://developers.cloudflare.com/workers/) - Edge computing
 - [AWS Lambda Node.js](https://docs.aws.amazon.com/lambda/latest/dg/lambda-nodejs.html)
@@ -254,31 +385,37 @@ class CostTracker {
 - [Azure Functions JavaScript](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-node)
 
 ### Database & Storage (TypeScript)
+
 - [Supabase Deployment](https://supabase.com/docs/guides/hosting/overview) - PostgreSQL hosting
 - [PlanetScale Deployment](https://planetscale.com/docs/tutorials/deploy-to-vercel) - MySQL serverless
 - [MongoDB Atlas](https://docs.atlas.mongodb.com/) - MongoDB cloud hosting
 - [Redis Cloud](https://docs.redis.com/latest/rc/) - Managed Redis
 
 ### CI/CD for JavaScript/TypeScript
+
 - [GitHub Actions](https://docs.github.com/en/actions) - CI/CD workflows
 - [Vercel Git Integration](https://vercel.com/docs/concepts/git) - Automatic deployments
 - [Railway CI/CD](https://docs.railway.app/deploy/builds) - Build and deploy
 - [GitLab CI/CD](https://docs.gitlab.com/ee/ci/) - DevOps platform
 
 ### MLOps Platforms
+
 - [Weights & Biases](https://docs.wandb.ai/) - Experiment tracking
 - [MLflow](https://mlflow.org/docs/latest/index.html) - ML lifecycle management
 - [LangSmith](https://docs.langchain.com/langsmith) - LLM application monitoring
 - [Helicone](https://docs.helicone.ai/) - LLM observability platform
 
 ## Course Completion
+
 Congratulations! You've completed the 7-week AI Learning Roadmap. You now have:
+
 - Solid understanding of LLM fundamentals
 - Practical experience with modern AI frameworks
 - Skills in building end-to-end AI applications
 - Knowledge of production deployment and operations
 
 ## Next Steps
+
 - Apply your knowledge to real-world projects
 - Contribute to open-source AI projects
 - Stay updated with the latest AI research and developments
