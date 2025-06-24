@@ -71,6 +71,7 @@
 
 ## Code Examples
 
+### Python Implementation
 ```python
 from langchain.agents import initialize_agent, Tool
 from langchain.agents import AgentType
@@ -122,6 +123,57 @@ class ResearchAgent:
     def collaborate(self, other_agents, task):
         # Implement collaboration logic
         pass
+```
+
+### JavaScript/TypeScript Implementation
+```typescript
+import { initializeAgentExecutor, Tool } from "langchain/agents";
+import { OpenAI } from "langchain/llms/openai";
+import { DuckDuckGoSearch } from "langchain/tools/web/duckduckgo";
+
+// Define tools
+const search = new DuckDuckGoSearch();
+const tools: Tool[] = [
+  {
+    name: "Search",
+    func: search.run,
+    description: "Search for current information",
+  },
+];
+
+// Initialize agent
+const llm = new OpenAI({ temperature: 0 });
+const agent = await initializeAgentExecutor(
+  tools,
+  llm,
+  { agentType: "zero-shot-react-description", verbose: true }
+);
+
+// Custom agent with memory
+import { BufferMemory } from "langchain/memory";
+
+const memory = new BufferMemory({ memoryKey: "chat_history" });
+const conversationalAgent = await initializeAgentExecutor(
+  tools,
+  llm,
+  { agentType: "conversational-react-description", memory, verbose: true }
+);
+
+// Multi-agent system example
+class ResearchAgent {
+  constructor(public name: string, public specialty: string) {
+    this.name = name;
+    this.specialty = specialty;
+  }
+
+  async research(topic: string) {
+    // Implement research logic
+  }
+
+  async collaborate(otherAgents: ResearchAgent[], task: string) {
+    // Implement collaboration logic
+  }
+}
 ```
 
 ## Resources

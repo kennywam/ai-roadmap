@@ -66,31 +66,163 @@
 
 ## Code Examples
 
+### Python Implementation
 ```python
 from langchain.vectorstores import Chroma
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
+from langchain.document_loaders import TextLoader
 
-# Document processing
-text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
-texts = text_splitter.split_text(document_text)
+# Load and process documents
+loader = TextLoader("document.txt")
+documents = loader.load()
+
+# Split documents into chunks
+text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+texts = text_splitter.split_documents(documents)
 
 # Create vector store
 embeddings = OpenAIEmbeddings()
-vectorstore = Chroma.from_texts(texts, embeddings)
+vectorstore = Chroma.from_documents(texts, embeddings)
 
 # Create RAG chain
 llm = OpenAI(temperature=0)
 qa_chain = RetrievalQA.from_chain_type(
     llm=llm,
     chain_type="stuff",
-    retriever=vectorstore.as_retriever()
+    retriever=vectorstore.as_retriever(search_kwargs={"k": 4})
 )
 
 # Query the system
 result = qa_chain({"query": "What is the main topic of the document?"})
+print(result["result"])
+```
+
+### JavaScript/TypeScript Implementation
+```typescript
+import { Chroma } from "langchain/vectorstores/chroma";
+import { OpenAIEmbeddings } from "langchain/embeddings/openai";
+import { CharacterTextSplitter } from "langchain/text_splitter";
+import { RetrievalQAChain } from "langchain/chains";
+import { OpenAI } from "langchain/llms/openai";
+import { TextLoader } from "langchain/document_loaders/fs/text";
+
+// Load and process documents
+const loader = new TextLoader("document.txt");
+const documents = await loader.load();
+
+// Split documents into chunks
+const textSplitter = new CharacterTextSplitter({
+  chunkSize: 1000,
+  chunkOverlap: 200,
+});
+const texts = await textSplitter.splitDocuments(documents);
+
+// Create vector store
+const embeddings = new OpenAIEmbeddings();
+const vectorStore = await Chroma.fromDocuments(texts, embeddings);
+
+// Create RAG chain
+const llm = new OpenAI({ temperature: 0 });
+const qaChain = RetrievalQAChain.fromLLM(
+  llm,
+  vectorStore.asRetriever({ k: 4 })
+);
+
+// Query the system
+const result = await qaChain.call({
+  query: "What is the main topic of the document?"
+});
+console.log(result.text);
+```
+
+### Advanced RAG with Pinecone (Python)
+```python
+import pinecone
+from langchain.vectorstores import Pinecone
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.chains import ConversationalRetrievalChain
+from langchain.memory import ConversationBufferMemory
+from langchain.llms import OpenAI
+
+# Initialize Pinecone
+pinecone.init(api_key="your-api-key", environment="your-env")
+index_name = "rag-example"
+
+# Create embeddings and vector store
+embeddings = OpenAIEmbeddings()
+vectorstore = Pinecone.from_existing_index(index_name, embeddings)
+
+# Set up memory for conversation
+memory = ConversationBufferMemory(
+    memory_key="chat_history",
+    return_messages=True
+)
+
+# Create conversational RAG chain
+llm = OpenAI(temperature=0)
+qa_chain = ConversationalRetrievalChain.from_llm(
+    llm=llm,
+    retriever=vectorstore.as_retriever(),
+    memory=memory,
+    return_source_documents=True
+)
+
+# Query with conversation context
+result = qa_chain({"question": "What are the key findings?"})
+print(result["answer"])
+print("Sources:", [doc.metadata for doc in result["source_documents"]])
+```
+
+### Advanced RAG with Pinecone (JavaScript/TypeScript)
+```typescript
+import { PineconeStore } from "langchain/vectorstores/pinecone";
+import { OpenAIEmbeddings } from "langchain/embeddings/openai";
+import { ConversationalRetrievalQAChain } from "langchain/chains";
+import { BufferMemory } from "langchain/memory";
+import { OpenAI } from "langchain/llms/openai";
+import { PineconeClient } from "@pinecone-database/pinecone";
+
+// Initialize Pinecone
+const pinecone = new PineconeClient();
+await pinecone.init({
+  apiKey: "your-api-key",
+  environment: "your-env",
+});
+const index = pinecone.Index("rag-example");
+
+// Create embeddings and vector store
+const embeddings = new OpenAIEmbeddings();
+const vectorStore = await PineconeStore.fromExistingIndex(
+  embeddings,
+  { pineconeIndex: index }
+);
+
+// Set up memory for conversation
+const memory = new BufferMemory({
+  memoryKey: "chat_history",
+  returnMessages: true,
+});
+
+// Create conversational RAG chain
+const llm = new OpenAI({ temperature: 0 });
+const qaChain = ConversationalRetrievalQAChain.fromLLM(
+  llm,
+  vectorStore.asRetriever(),
+  {
+    memory,
+    returnSourceDocuments: true,
+  }
+);
+
+// Query with conversation context
+const result = await qaChain.call({
+  question: "What are the key findings?"
+});
+console.log(result.text);
+console.log("Sources:", result.sourceDocuments.map(doc => doc.metadata));
 ```
 
 ## Resources

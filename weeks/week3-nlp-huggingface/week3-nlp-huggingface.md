@@ -60,6 +60,7 @@
 
 ## Code Examples
 
+### Python Implementation
 ```python
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from transformers import pipeline
@@ -93,6 +94,33 @@ trainer = Trainer(
     train_dataset=train_dataset,
     eval_dataset=eval_dataset,
 )
+```
+
+### JavaScript/TypeScript Implementation
+```typescript
+import { HfInference } from "@huggingface/inference";
+
+// Initialize Hugging Face Inference
+const hf = new HfInference("your-hf-api-token");
+
+// Sentiment analysis example
+async function sentimentAnalysis(text: string) {
+  const result = await hf.sentiment({
+    model: "bert-base-uncased",
+    inputs: text,
+  });
+  console.log(result);
+}
+
+sentimentAnalysis("I love using Transformers.js for my projects!");
+```
+
+### Fine-tuning in JavaScript/TypeScript
+```typescript
+// Here we provide a conceptual example as fine-tuning is typically done in Python.
+// Leverage Node.js with TensorFlow.js for training or use Python scripts in a Node.js app.
+console.log("Fine-tuning is generally recommended to be performed using Python APIs with frameworks such as PyTorch or TensorFlow.");
+```
 ```
 
 ## Resources

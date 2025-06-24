@@ -79,74 +79,100 @@
 
 ## Code Examples
 
-```python
-# Docker configuration
-# Dockerfile
-FROM python:3.9-slim
+### JavaScript/TypeScript Implementation
+```typescript
+// Docker configuration
+// Dockerfile
+FROM node:16-slim
 
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm install
 
 COPY . .
-EXPOSE 8000
+EXPOSE 3000
 
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["node", "app.js"]
+```
 
-# FastAPI application with monitoring
-from fastapi import FastAPI, HTTPException
-from prometheus_fastapi_instrumentator import Instrumentator
-import logging
-import time
+### Express.js Application with Monitoring
+```typescript
+import express from 'express';
+import { counter, histogram } from 'prom-client';
+import client, { Registry } from 'prom-client';
+import { createLogger, transports, format } from 'winston';
+import responseTime from 'response-time';
 
-app = FastAPI()
+const app = express();
+const registry = new Registry();
 
-# Prometheus metrics
-Instrumentator().instrument(app).expose(app)
+// Prometheus metrics
+client.collectDefaultMetrics({ register: registry });
+const requestDurationMetric = histogram({
+  name: 'http_request_duration_seconds',
+  help: 'Histogram for tracking request durations',
+  labelNames: ['method', 'route', 'status_code'],
+  registers: [registry],
+});
 
-# Logging configuration
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+// Logging
+const logger = createLogger({
+  level: 'info',
+  format: format.combine(
+    format.timestamp(),
+    format.json()
+  ),
+  defaultMeta: { service: 'user-service' },
+  transports: [new transports.Console()],
+});
 
-@app.middleware("http")
-async def log_requests(request, call_next):
-    start_time = time.time()
-    response = await call_next(request)
-    process_time = time.time() - start_time
-    
-    logger.info(f"Path: {request.url.path}, "
-                f"Method: {request.method}, "
-                f"Status: {response.status_code}, "
-                f"Duration: {process_time:.4f}s")
-    
-    return response
+// Middleware to measure response time and log requests
+app.use(responseTime((req, res, time) => {
+  requestDurationMetric.observe({
+    method: req.method,
+    route: req.path,
+    status_code: res.statusCode,
+  }, time / 1000);
 
-# Kubernetes deployment YAML
+  logger.info('Request info', {
+    method: req.method,
+    path: req.path,
+    status: res.statusCode,
+    duration: time,
+  });
+}));
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.listen(3000, () => {
+  logger.info('Server running on port 3000');
+});
+
+// Kubernetes deployment YAML
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: llm-app
+  name: nextjs-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: llm-app
+      app: nextjs-app
   template:
     metadata:
       labels:
-        app: llm-app
+        app: nextjs-app
     spec:
       containers:
-      - name: llm-app
-        image: your-registry/llm-app:latest
+      - name: nextjs-app
+        image: your-registry/nextjs-app:latest
         ports:
-        - containerPort: 8000
+        - containerPort: 3000
         env:
-        - name: OPENAI_API_KEY
-          valueFrom:
-            secretKeyRef:
-              name: api-secrets
-              key: openai-api-key
+        - name: NEXT_PUBLIC_API_URL
+          value: 'https://api.example.com'
         resources:
           requests:
             memory: "512Mi"
@@ -154,27 +180,36 @@ spec:
           limits:
             memory: "1Gi"
             cpu: "500m"
+```
 
-# Cost tracking example
-class CostTracker:
-    def __init__(self):
-        self.usage_log = []
-    
-    def track_usage(self, model, tokens_used, cost):
-        self.usage_log.append({
-            'timestamp': time.time(),
-            'model': model,
-            'tokens': tokens_used,
-            'cost': cost
-        })
-    
-    def get_daily_cost(self, date):
-        # Calculate daily costs
-        pass
-    
-    def optimize_model_selection(self, task_type):
-        # Select most cost-effective model
-        pass
+### Cost Tracking Example
+```typescript
+class CostTracker {
+  private usageLog: Array<{ timestamp: number; model: string; tokens: number; cost: number }> = [];
+
+  trackUsage(model: string, tokensUsed: number, cost: number) {
+    this.usageLog.push({
+      timestamp: Date.now(),
+      model,
+      tokens: tokensUsed,
+      cost,
+    });
+  }
+
+  getDailyCost(date: Date): number {
+    // Calculate daily costs
+    return this.usageLog.filter(log => {
+      const logDate = new Date(log.timestamp);
+      return logDate.setHours(0, 0, 0, 0) === date.setHours(0, 0, 0, 0);
+    }).reduce((acc, log) => acc + log.cost, 0);
+  }
+
+  optimizeModelSelection(taskType: string): string {
+    // Select the most cost-effective model for a given task
+    return 'model-A'; // Dummy implementation
+  }
+}
+```
 ```
 
 ## Resources
