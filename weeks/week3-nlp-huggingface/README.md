@@ -122,11 +122,10 @@ sentimentAnalysis("I love using Transformers.js for my projects!");
 console.log("Fine-tuning is generally recommended to be performed using Python APIs with frameworks such as PyTorch or TensorFlow.");
 ```
 ```
-
 ## Resources
 
 ### Python Hugging Face
-- [Hugging Face Transformers Documentation](https://huggingface.co/docs/transformers)
+- [Transformers Documentation](https://huggingface.co/docs/transformers)
 - [Transformers Course](https://huggingface.co/course)
 - [Fine-tuning Guide](https://huggingface.co/docs/transformers/training)
 - [Datasets Library](https://huggingface.co/docs/datasets)
@@ -135,20 +134,21 @@ console.log("Fine-tuning is generally recommended to be performed using Python A
 ### JavaScript/TypeScript Hugging Face
 - [Hugging Face.js Documentation](https://huggingface.co/docs/huggingface.js)
 - [Hugging Face.js GitHub](https://github.com/huggingface/huggingface.js)
-- [Transformers.js](https://github.com/xenova/transformers.js) - Run Transformers in the browser
-- [Hugging Face Inference API](https://huggingface.co/docs/api-inference) - JavaScript client
-- [TensorFlow.js Models](https://github.com/tensorflow/tfjs-models) - Pre-trained models for JS
+- [Transformers.js](https://github.com/xenova/transformers.js) — Run Transformers in the browser
+- [Hugging Face Inference API](https://huggingface.co/docs/api-inference) — JavaScript client
+- [TensorFlow.js Models](https://github.com/tensorflow/tfjs-models) — Pre-trained models for JS
 
 ### NLP in JavaScript/TypeScript
-- [Natural (Node.js)](https://github.com/NaturalNode/natural) - NLP library for Node.js
-- [Compromise](https://github.com/spencermountain/compromise) - Natural language processing
-- [ML5.js](https://ml5js.org/) - Machine learning for creative coding
+- [Natural (Node.js)](https://github.com/NaturalNode/natural) — NLP library for Node.js
+- [Compromise](https://github.com/spencermountain/compromise) — Natural language processing
+- [ML5.js](https://ml5js.org/) — Machine learning for creative coding
 - [TensorFlow.js Text Processing](https://www.tensorflow.org/js/tutorials/training/text_classification)
 
 ### General Resources
 - [Model Hub](https://huggingface.co/models)
-- [Papers With Code NLP section](https://paperswithcode.com/area/natural-language-processing)
-- [Hugging Face Spaces](https://huggingface.co/spaces) - Interactive demos
+- [Papers With Code: NLP Section](https://paperswithcode.com/area/natural-language-processing)
+- [Hugging Face Spaces](https://huggingface.co/spaces) — Interactive demos
 
 ## Next Week Preview
+
 Week 4 will focus on Retrieval Augmented Generation (RAG) systems and vector databases.
