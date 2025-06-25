@@ -121,7 +121,6 @@ sentimentAnalysis("I love using Transformers.js for my projects!");
 // Leverage Node.js with TensorFlow.js for training or use Python scripts in a Node.js app.
 console.log("Fine-tuning is generally recommended to be performed using Python APIs with frameworks such as PyTorch or TensorFlow.");
 ```
-```
 ## Resources
 
 ### Python Hugging Face
