@@ -4,7 +4,7 @@ This roadmap is designed for software engineers who want to build intelligent sy
 
 ---
 
-## 📁 GitHub Repo Structure (Suggested)
+## 📁 GitHub Repo Structure
 
 ```
 ai-roadmap/
